@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Josefin_Sans } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 
 const josefinSans = Josefin_Sans({
@@ -7,9 +7,12 @@ const josefinSans = Josefin_Sans({
 });
 
 export const metadata = {
-  title: "CalcFlow - Multi-Utility Calculator",
+  title: {
+    default: "Countro - Smart Multi-Utility Calculator",
+    template: "%s | Countro",
+  },
   description:
-    "A professional percentage, standard, and date calculator suite built with Next.js",
+    "All-in-one suite for percentage, standard, and date calculations.",
 };
 
 export default function RootLayout({ children }) {
