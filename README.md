@@ -12,7 +12,7 @@
 
 <p align="center">
   <img src="src/assets/readme_image/calculator.png" alt="Standard Calculator" width="48%" />
-  <img src="src/assets/readme_image/date&calc.png" alt="Date Calculator" width="48%" />
+  <img src="src/assets/readme_image/date-calc.png" alt="Date Calculator" width="48%" />
 </p>
 
 ---
