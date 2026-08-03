@@ -47,7 +47,6 @@
 * **Framework:** [Next.js](https://nextjs.org/) (App Router)
 * **Library:** [React.js](https://react.dev/)
 * **Styling & UI:** [Tailwind CSS](https://tailwindcss.com/)
-* **Icons:** [Lucide React](https://lucide.dev/)
 * **Offline & PWA:** Native Service Worker & Web App Manifest
 * **Deployment:** [Vercel](https://vercel.com/)
 
@@ -57,9 +56,10 @@
 
 Developed with ❤️ by **Salman Sahed**
 
-* **Facebook:** [Salman Sahed](https://facebook.com/)
-* **LinkedIn:** [Salman Sahed](https://linkedin.com/)
+* **Facebook:** [Salman Sahed](https://facebook.com/salmansahedbd)
+* **LinkedIn:** [Salman Sahed](https://www.linkedin.com/in/salman-sahed)
 * **GitHub:** [@salmansahed](https://github.com/salmansahed)
+* **Portfolio:** [Salman Sahed](https://salman-sahed.vercel.app)
 
 ---
 
