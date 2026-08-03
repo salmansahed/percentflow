@@ -10,7 +10,6 @@ export const metadata = {
   title: "Countro — Multi-Utility Calculator",
   description:
     "All-in-one suite for percentage, standard, and date calculations.",
-  themeColor: "#4f46e5",
 };
 
 export default function RootLayout({ children }) {
@@ -18,13 +17,16 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${josefinSans.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         {children}
-        {/* ⚡ Service Worker Registration Script */}
+        {/* Service Worker Registration */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js');
+                  navigator.serviceWorker.register('/sw.js').then(
+                    function(reg) { console.log('SW Registered:', reg.scope); },
+                    function(err) { console.log('SW Registration failed:', err); }
+                  );
                 });
               }
             `,

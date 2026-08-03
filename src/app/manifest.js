@@ -2,8 +2,7 @@ export default function manifest() {
   return {
     name: "Countro — Multi-Utility Calculator",
     short_name: "Countro",
-    description:
-      "A fast, modern, and precise percentage, standard, and date calculator suite.",
+    description: "A fast, modern, and precise calculation suite.",
     start_url: "/",
     display: "standalone",
     background_color: "#f1f5f9",
