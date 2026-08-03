@@ -7,12 +7,10 @@ const josefinSans = Josefin_Sans({
 });
 
 export const metadata = {
-  title: {
-    default: "Countro - Smart Multi-Utility Calculator",
-    template: "%s | Countro",
-  },
+  title: "Countro — Multi-Utility Calculator",
   description:
     "All-in-one suite for percentage, standard, and date calculations.",
+  themeColor: "#4f46e5",
 };
 
 export default function RootLayout({ children }) {
