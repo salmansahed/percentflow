@@ -1,5 +1,6 @@
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import RegisterSW from "@/components/RegisterSW";
 
 const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
@@ -16,22 +17,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${josefinSans.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <RegisterSW />
         {children}
-        {/* Service Worker Registration */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js').then(
-                    function(reg) { console.log('SW Registered:', reg.scope); },
-                    function(err) { console.log('SW Registration failed:', err); }
-                  );
-                });
-              }
-            `,
-          }}
-        />
       </body>
     </html>
   );
