@@ -1,6 +1,6 @@
 export default function manifest() {
   return {
-    name: "Countro — Multi-Utility Calculator",
+    name: "Countro - Multi-Utility Calculator",
     short_name: "Countro",
     description: "A fast, modern, and precise calculation suite.",
     start_url: "/",

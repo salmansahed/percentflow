@@ -8,7 +8,7 @@ const josefinSans = Josefin_Sans({
 });
 
 export const metadata = {
-  title: "Countro — Multi-Utility Calculator",
+  title: "Countro - Multi-Utility Calculator",
   description:
     "All-in-one suite for percentage, standard, and date calculations.",
 };

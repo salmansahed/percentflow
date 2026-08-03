@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚡ Countro — Multi-Utility Calculation Suite
 
-## Getting Started
+**Countro** is a fast, precise, and modern web application built to streamline everyday multi-utility calculations. Designed with a clean UI, seamless micro-interactions, and offline capabilities, Countro provides an all-in-one suite for percentage calculations, standard arithmetic, and date duration estimations.
 
-First, run the development server:
+---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="src/assets/readme_image/percentage.png" alt="Percentage Calculator" width="100%" />
+</p>
+
+<p align="center">
+  <img src="src/assets/readme_image/calculator.png" alt="Standard Calculator" width="48%" />
+  <img src="src/assets/readme_image/date&calc.png" alt="Date Calculator" width="48%" />
+</p>
+
+---
+
+## ✨ Key Features
+
+* **🧮 Percentage Calculator Suite:**
+  * Quick percentage finder (X% of Y)
+  * Percentage change & growth estimation
+  * Discount & markup calculator
+
+* **🔢 Standard Calculator:**
+  * Clean, interactive, and fast arithmetic operations
+  * Real-time calculation feedback
+
+* **📅 Date & Duration Calculator:**
+  * Difference between two dates (Years, Months, Days)
+  * Date addition and subtraction for project deadlines
+
+* **📱 Progressive Web App (PWA):**
+  * Installable as a native app on Desktop & Mobile
+  * Full offline support via Custom Service Worker caching
+
+* **🎨 Modern & Responsive Design:**
+  * Sleek glassmorphism visual layout
+  * Fully responsive across all device screen sizes
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Library:** [React.js](https://react.dev/)
+* **Styling & UI:** [Tailwind CSS](https://tailwindcss.com/)
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **Offline & PWA:** Native Service Worker & Web App Manifest
+* **Deployment:** [Vercel](https://vercel.com/)
+
+---
+
+## 👤 Author
+
+Developed with ❤️ by **Salman Sahed**
+
+* **Facebook:** [Salman Sahed](https://facebook.com/)
+* **LinkedIn:** [Salman Sahed](https://linkedin.com/)
+* **GitHub:** [@salmansahed](https://github.com/salmansahed)
+
+---
+
+## 🚀 Getting Started (Installation & Setup)
+
+Follow these steps to run the project locally on your machine:
+
+### 1. Clone the repository
 ```bash
+git clone https://github.com/salmansahed/countro.git
+cd countro
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
