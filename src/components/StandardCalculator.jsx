@@ -1,38 +1,83 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function StandardCalculator() {
   const [calcDisplay, setCalcDisplay] = useState("0");
   const [calcEquation, setCalcEquation] = useState("");
 
-  const handleCalcBtn = (val) => {
-    if (val === "C") {
-      setCalcDisplay("0");
-      setCalcEquation("");
-      return;
-    }
-    if (val === "=") {
-      try {
-        const expression = (calcEquation + calcDisplay)
-          .replace(/×/g, "*")
-          .replace(/÷/g, "/");
-        const evalResult = new Function(`return ${expression}`)();
-        setCalcDisplay(String(evalResult));
+  const handleCalcBtn = useCallback(
+    (val) => {
+      // Clear All
+      if (val === "C" || val === "Escape") {
+        setCalcDisplay("0");
         setCalcEquation("");
-      } catch (err) {
-        setCalcDisplay("Error");
+        return;
       }
-      return;
-    }
 
-    if (["+", "-", "*", "/"].includes(val)) {
-      setCalcEquation(calcEquation + " " + calcDisplay + " " + val);
-      setCalcDisplay("0");
-    } else {
-      setCalcDisplay((prev) => (prev === "0" ? String(val) : prev + val));
-    }
-  };
+      // Backspace logic
+      if (val === "Backspace") {
+        setCalcDisplay((prev) => {
+          if (prev.length <= 1 || prev === "Error") return "0";
+          return prev.slice(0, -1);
+        });
+        return;
+      }
+
+      // Equal / Calculation
+      if (val === "=" || val === "Enter") {
+        try {
+          const expression = (calcEquation + calcDisplay)
+            .replace(/×/g, "*")
+            .replace(/÷/g, "/");
+          const evalResult = new Function(`return ${expression}`)();
+          setCalcDisplay(String(evalResult));
+          setCalcEquation("");
+        } catch (err) {
+          setCalcDisplay("Error");
+        }
+        return;
+      }
+
+      // Operators (+, -, *, /)
+      if (["+", "-", "*", "/"].includes(val)) {
+        setCalcEquation((prev) => prev + " " + calcDisplay + " " + val);
+        setCalcDisplay("0");
+      } else if (!isNaN(val) || val === ".") {
+        // Numbers & Decimal point
+        setCalcDisplay((prev) => {
+          if (prev === "0" && val !== ".") return String(val);
+          if (val === "." && prev.includes(".")) return prev; 
+          return prev + val;
+        });
+      }
+    },
+    [calcEquation, calcDisplay],
+  );
+
+  // ⌨️ Keyboard Input Handling
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const key = e.key;
+
+      if (
+        (key >= "0" && key <= "9") ||
+        ["+", "-", "*", "/", ".", "=", "Enter", "Backspace", "Escape"].includes(
+          key,
+        )
+      ) {
+        e.preventDefault();
+        handleCalcBtn(key);
+      } else if (key.toLowerCase() === "c") {
+        handleCalcBtn("C");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleCalcBtn]);
 
   return (
     <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
